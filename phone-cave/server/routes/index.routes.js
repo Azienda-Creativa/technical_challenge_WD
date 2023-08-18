@@ -1,22 +1,22 @@
 const router = require("express").Router()
-const data = require("../../../data/phones.json")
-//console.log(data)
+const data = require("../data/phones.json")
 
 router.get("/", (req, res, next) => {
-  res.json("All good in here at home")
+  res.json(data)
 })
 
-router.get("/phones", (req, res, next) => {
-  // Send the phones as a response
+router.get("/:id", (req, res, next) => {
+  const { id, name } = req.params
+  const details = data.find((phone) => {
+    return phone.id === id
+  })
+
   res.json("GET phones works", data)
-  console.log(data)
+  console.log(details)
 })
 
-router.get("/phones/:id"),
-  (req, res, next) => {
-    const { phoneId } = req.params
-    res.json("GET phone works", data.phoneId)
-    console.log(data.phoneId)
-  }
+router.get("/*", (req, res, next) => {
+  res.status(404).send("404 - Not Found")
+})
 
 module.exports = router

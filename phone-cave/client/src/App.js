@@ -1,35 +1,28 @@
-import { useState, useEffect } from "react"
 import "./App.css"
 import Navbar from "./components/Navbar/Navbar"
-
 import PhonePage from "./pages/PhonePage/PhonePage"
-import AboutPage from "./pages/AboutPage/AboutPage"
+import PhoneDetail from "./pages/PhoneDetail"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 
 function App() {
-  const [phones, setPhones] = useState([])
-
-  useEffect(() => {
-    fetch("../../../data/phones.json")
-      .then((res) => res.json())
-      .then((list) => setPhones(list))
-  }, [])
-
   return (
     <div className="App">
-      <Navbar />
-
       <Routes>
         <Route
           path="/"
-          element={<PhonePage phones={phones} />}
+          element={<Navigate to="/phones" />}
         />
 
         <Route
-          path="/about"
-          element={<AboutPage />}
+          path="/phones"
+          element={<PhonePage />}
+        />
+
+        <Route
+          path="/:id"
+          //element={<PhoneDetail />}
         />
 
         <Route
