@@ -13,6 +13,7 @@ function PhonePage() {
 
   const navigate = useNavigate()
   const { id } = useParams()
+  console.log(id)
 
   useEffect(() => {
     async function getData() {
@@ -39,8 +40,6 @@ function PhonePage() {
   else
     return (
       <>
-        {" "}
-        {/* Apply custom class for styling */}
         <h3 className="mb-4">List of Phones</h3>
         {isLoading ? (
           <h5>Loading...</h5>
