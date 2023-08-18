@@ -6,7 +6,7 @@ router.get("/", (req, res, next) => {
 })
 
 router.get("/:id", (req, res, next) => {
-  const { id, name } = req.params
+  const { id } = req.params
   const details = data.find((phone) => {
     return phone.id === id
   })
