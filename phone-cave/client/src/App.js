@@ -1,7 +1,7 @@
 import "./App.css"
 import Navbar from "./components/Navbar/Navbar"
 import PhonePage from "./pages/PhonePage/PhonePage"
-import PhoneDetail from "./pages/PhoneDetail"
+import PhoneDetail from "./pages/PhonePage/PhoneDetail"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
 import { Routes, Route, Navigate } from "react-router-dom"
@@ -21,7 +21,8 @@ function App() {
         />
 
         <Route
-          path="/:id"
+          path="/phones/:id"
+          element={<PhoneDetail />}
           //element={<PhoneDetail />}
         />
 
