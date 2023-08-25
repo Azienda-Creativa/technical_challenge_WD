@@ -8,16 +8,23 @@ import { Container, ListGroup, Image, Col, Button } from "react-bootstrap"
 const API_URL = process.env.REACT_APP_SERVER_URL
 
 function PhoneDetail({ phone }) {
+  // const imageUrl = `${API_URL}${phone.image}`
+  // console.log(imageUrl)
   return (
-    <div>
-      <div>
-        <h2>Phone Details</h2>
-        <h3>Name: {phone.name}</h3>
-        <p>Brand: {phone.brand}</p>
-        <p>Price: ${phone.price}</p>PhoneDetail
-        <p>{phone.image}</p>
-      </div>
-    </div>
+    <>
+      <h2>Phone Details</h2>
+      <h3>Name: {phone.name}</h3>
+      <p>Brand: {phone.brand}</p>
+      <p>Price: ${phone.price}</p>
+      <p>Color : {phone.color}</p>
+      <p>Processor : {phone.processor}</p>
+      <img
+        src={phone.image}
+        h={phone.image}
+        alt={phone.name}
+        style={{ width: "auto", height: "200px", padding: "16px" }}
+      />
+    </>
   )
 }
 

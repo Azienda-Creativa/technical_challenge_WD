@@ -8,8 +8,6 @@ router.get("/", (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const id = parseInt(req.params.id)
-
-    console.log(`id: ${id}`, req.params)
     const details = await data.find((phone) => {
       return phone.id === id
     })

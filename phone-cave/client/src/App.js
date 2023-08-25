@@ -16,16 +16,15 @@ function App() {
         />
 
         <Route
-          path="/phones"
-          element={<PhonePage />}
-        />
-
-        <Route
           path="/phones/:id"
           element={<PhoneDetail />}
           //element={<PhoneDetail />}
         />
 
+        <Route
+          path="/phones"
+          element={<PhonePage />}
+        />
         <Route
           path="*"
           element={<NotFoundPage />}
